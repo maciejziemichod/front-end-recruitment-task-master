@@ -1,0 +1,135 @@
+/*!
+ * Bootstrap v4.3.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+@import "functions";
+@import "variables";
+@import "mixins";
+
+$my-card-height: 25.4375rem;
+$btn-border-radius: 2rem;
+$body-bg: #f0f0f0;
+$body-color: #121212;
+$card-border-width: 0px;
+$font-family-base: "Roboto";
+$card-height: $my-card-height;
+
+// @import "root";
+@import "reboot";
+// @import "type";
+@import "images";
+// @import "code";
+@import "grid";
+// @import "tables";
+// @import "forms";
+@import "buttons";
+// @import "transitions";
+// @import "dropdown";
+// @import "button-group";
+// @import "input-group";
+// @import "custom-forms";
+// @import "nav";
+// @import "navbar";
+@import "card";
+// @import "breadcrumb";
+// @import "pagination";
+// @import "badge";
+// @import "jumbotron";
+// @import "alert";
+// @import "progress";
+// @import "media";
+// @import "list-group";
+// @import "close";
+// @import "toasts";
+// @import "modal";
+@import "tooltip";
+// @import "popover";
+// @import "carousel";
+// @import "spinners";
+@import "utilities";
+// @import "print";
+
+$buttoncolor: #e4c1ae;
+.btn {
+    @include button-variant(
+        $buttoncolor,
+        transparent,
+        darken($buttoncolor, 10%),
+        lighten($buttoncolor, 5%),
+        lighten($buttoncolor, 10%),
+        darken($buttoncolor, 30%)
+    );
+}
+.btn-outline {
+    @include button-outline-variant(
+        $buttoncolor,
+        #222222,
+        lighten($buttoncolor, 5%),
+        $buttoncolor
+    );
+}
+
+body {
+    padding-top: 6.3125rem;
+}
+.row,
+.card-text,
+.card-title {
+    margin: 0;
+}
+.col-sm-6,
+.container {
+    padding: 0;
+}
+.side-img {
+    max-width: 100%;
+    height: $my-card-height;
+    object-fit: cover;
+}
+.card-body {
+    padding: 5.375rem 6.875rem;
+    .card-title {
+        line-height: 1.2;
+        font-size: 2.625rem;
+        padding-bottom: 2.6875rem;
+    }
+    .card-text {
+        padding-bottom: 2.1875rem;
+    }
+    .custom-btn {
+        height: 2.9375rem;
+        width: 8.4375rem;
+    }
+}
+
+@media (max-width: 991.5px) {
+    .card-body {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        padding-top: 4rem;
+    }
+}
+
+@media (max-width: 767.5px) {
+    .card-body {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+
+        .card-title {
+            font-size: 2.25rem;
+            padding-bottom: 1.5rem;
+        }
+    }
+}
+@media (max-width: 575px) {
+    .card,
+    .side-img {
+        height: auto;
+    }
+    .card-body {
+        padding-top: 1.25rem;
+    }
+}

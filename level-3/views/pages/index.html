@@ -1,0 +1,73 @@
+{# Variables: - title - box - title - content - images_default - large | medium
+| small - url - width - height - images - url - width - height #} {% extends
+"base.html" %} {% block content %}
+<div class="card">
+    <div class="row">
+        <div class="col-sm-6">
+            <picture>
+                <source
+                    media="(max-width: 720px)"
+                    class="side-img"
+                    srcset="{{box.images_default.medium.url}}"
+                />
+                <source
+                    media="(max-width: 480px)"
+                    class="side-img"
+                    srcset="{{box.images_default.small.url}}"
+                />
+                <img
+                    class="side-img"
+                    src="{{box.images_default.large.url}}"
+                    alt=""
+                    srcset=""
+                />
+            </picture>
+        </div>
+        <div class="col-sm-6">
+            <div class="card-body">
+                <h2 class="card-title font-weight-bold">Lorem Ipsum</h2>
+                <p class="card-text font-weight-light">
+                    Lorem ipsum dolor sit amet, consectetur adipis scing elit.
+                    Pellentesque ac nisi felis. Suspendisse ut finibus augue.
+                </p>
+                <button
+                    class="btn text-white custom-btn float-right font-weight-bold"
+                    data-toggle="modal"
+                    data-target="#exampleModal"
+                >
+                    Button
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal -->
+<div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    {{box.title}}
+                </h5>
+                <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">{{box.content}}</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
